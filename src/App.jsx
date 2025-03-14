@@ -24,10 +24,10 @@ export default function App() {
               <div className="-mt-35">
               <section id="about"><About /></section>
               </div>
-              <div className="-mt-30">
+              <div className="">
               <section id="projects"><Projects /></section>
               </div>
-              <div className="-mt-30 ">
+              <div className="-mt-40 ">
               <section id="contact"><Contact /></section>
               </div>
             </>

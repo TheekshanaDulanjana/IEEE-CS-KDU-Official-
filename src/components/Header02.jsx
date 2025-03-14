@@ -15,14 +15,14 @@ export default function Header() {
   };
 
   return (
-    <header className='bg-white shadow-md fixed top-8 left-0 h-12 w-full z-50'>
+    <header className='bg-white shadow-md fixed top-0 md:top-8 left-0 h-12 w-full z-50'>
       <div className='flex justify-between items-center -mt-2 px-5 ml-20 md:px-10 py-3'>
         {/* Logo */}
         <a href={getNavLink("home")}>
           <img
             src={KDU_CS_LOGO}
             alt="KDU_CS_LOGO"
-            className="h-12 -mt-2 sm:h-10 sm:mt-0 sm:ml-0"
+            className="h-12 -mt-1 sm:h-10 sm:mt-0 sm:ml-0"
           />
         </a>
         

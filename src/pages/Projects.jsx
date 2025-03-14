@@ -8,11 +8,9 @@ import SlideInSection from "../SlideInSection";
 export default function Projects() {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
-  
-
   const toggleReadMore = (index) => {
     setExpandedIndex(index === expandedIndex ? null : index);
-  }; 
+  };
 
   const projects = [
     {
@@ -35,68 +33,44 @@ export default function Projects() {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.3 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
   return (
     <SlideInSection>
-    <div className="w-screen mt-30 flex items-center justify-center px-4 sm:px-8 lg:px-16">
-      <div className="text-center">
-        <h2 className="text-3xl font-poppins">
-          <span className="text-black font-bold">Recent</span>{" "}
-          <span className="text-[#f9a319] font-bold">Projects!</span>
-        </h2>
-
-        <section className="p-20">
-          <p className="text-lg text-black -mt-20 mb-8">What We Have Done!</p>
-
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-10 font-poppins justify-center w-full"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {projects.map((project, index) => {
-              const isExpanded = expandedIndex === index;
-              const shortText = project.description.slice(0, 150) + "...";
-              return (
-                <motion.div
-                  key={index}
-                  className="p-2 bg-white text-center shadow-xl rounded-xl transition-transform duration-300 hover:shadow-2xl hover:scale-105 max-w  border border-gray-200"
-                  variants={itemVariants}
+      <div className="w-full mt-10 flex flex-col items-center px-4 sm:px-8 lg:px-16">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-black">
+            Recent <span className="text-[#f9a319]">Projects!</span>
+          </h2>
+          <p className="text-lg text-black mt-2 mb-8">What We Have Done!</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
+          {projects.map((project, index) => {
+            const isExpanded = expandedIndex === index;
+            const shortText = project.description.slice(0, 150) + "...";
+            return (
+              <motion.div
+                key={index}
+                className="p-5 bg-white shadow-lg rounded-lg transition-transform duration-300 hover:shadow-2xl hover:scale-105 border border-gray-200"
+              >
+                <img
+                  src={project.image}
+                  alt="Project"
+                  className="w-full h-64 object-cover rounded-lg mb-3"
+                />
+                <h3 className="text-black text-lg font-bold">{project.title}</h3>
+                <p className="text-gray-600 text-sm mt-2">
+                  {isExpanded ? project.description : shortText}
+                </p>
+                <span
+                  className="text-[#f9a319] mt-3 text-sm cursor-pointer block text-right"
+                  onClick={() => toggleReadMore(index)}
                 >
-                  <img
-                    src={project.image}
-                    alt="Project"
-                    className="w-full h-[280px] object-cover rounded-lg mb-3"
-                  />
-                  <h3 className="text-black text-lg font-bold">{project.title}</h3>
-                  <p className="text-gray-600 text-sm text-left mt-2">
-                    {isExpanded ? project.description : shortText}
-                  </p>
-                  <span
-                    className="text-[#f9a319] mt-3 text-sm cursor-pointer"
-                    onClick={() => toggleReadMore(index)}
-                  >
-                    {isExpanded ? "Read Less" : "Read More"}
-                  </span>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </section>
+                  {isExpanded ? "Read Less" : "Read More"}
+                </span>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
-    </div>
     </SlideInSection>
   );
 }
