@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Img1 from '../assets/IEEE KDU SB Logo.png';
-import Img2 from '../assets/WIE Logo.png';
-import Img3 from '../assets/KDU EMBS LOGO1.png';
+import Img1 from '../assets/IEEE_KDU_SB_logo.png';
+import Img2 from '../assets/WIE_Logo.png';
+import Img3 from '../assets/KDU_EMBS_LOG.png';
 import Img4 from '../assets/kducomsoc.png';
 import Img5 from '../assets/PES1.png';
 
