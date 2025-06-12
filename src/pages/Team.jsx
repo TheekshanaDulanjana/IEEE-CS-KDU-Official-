@@ -23,7 +23,6 @@ export default function Team() {
         </div>
       </div>
 
-      {/* Year Selection Dropdown */}
       <div className="flex justify-center lg:justify-end px-4 mt-6">
         <div className="flex items-center bg-white border border-gray-300 rounded-md shadow-sm px-4 py-1">
           <label className="text-gray-700 font-poppins mr-2">Previous Years:</label>
@@ -39,7 +38,6 @@ export default function Team() {
         </div>
       </div>
 
-      {/* Conditional Board Rendering */}
       {selectedYear === "2025/2026" && <Board2526 />}
       {selectedYear === "2024/2025" && <Board2425 />}
     </div>

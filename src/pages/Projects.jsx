@@ -16,7 +16,6 @@ const Projects = () => {
 
   return (
     <div className="w-full mt-28">
-      {/* Hero Section */}
       <div className="relative w-full h-72 overflow-hidden">
         <img
           src={ProjectBanner}
@@ -34,7 +33,6 @@ const Projects = () => {
             highlighting our teamwork, skills, and passion for technology.
           </p>
 
-          {/* Search Bar */}
           <div className="w-full max-w-md relative mt-6">
             <input
               type="text"
@@ -54,7 +52,6 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Project Listings */}
       <div className="mt-10 px-4 md:px-10 pb-20">
         <MainProjectCompo searchTerm={searchTerm} />
       </div>
