@@ -19,7 +19,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-16 xl:px-24">
+    <div className="w-full mt-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-16 xl:px-24">
       <div className="flex flex-col lg:flex-row max-w-7xl w-full items-center justify-between gap-8">
         <div className="w-full lg:w-3/4 px-2">
           <motion.div
@@ -38,11 +38,17 @@ const About = () => {
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-800 font-bellefair leading-relaxed mb-4 mt-4 text-justify">
               Established in 2023,<span className="font-semibold"> The IEEE Computer Society </span> Student Chapter at <br className="hidden sm:block" />
               <span className="font-semibold"> General Sir John Kotelawala Defence University (KDU) </span>
-              serves as a vibrant platform for computer science enthusiasts and future technology leaders. Dedicated to advancing knowledge, fostering collaboration, and promoting innovation, the chapter provides students with valuable educational resources, industry connections, and hands-on experiences. With a strong focus on professional development, it empowers members with the skills and expertise needed to thrive in the ever-evolving world of technology.
+              serves as a vibrant platform for computer science enthusiasts and future technology leaders. 
+              Dedicated to advancing knowledge, fostering collaboration, and promoting innovation, 
+              the chapter provides students with valuable educational resources, industry connections, 
+              and hands-on experiences. With a strong focus on professional development, 
+              it empowers members with the skills and expertise needed to thrive in 
+              the ever-evolving world of technology.
+              
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="flex items-center gap-3">
-                <p className={`font-poppins text-xl ${isMobile ? "text-sm" : "text-lg"} mt-[4px]`}>Follow us on!</p>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-800 font-bellefair leading-relaxed mb-4 mt-4 text-justify">Follow us on!</p>
                 <a href="https://www.linkedin.com/company/ieee-computer-society-of-kdu/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="w-5 h-5 flex items-center justify-center text-black hover:text-[#f9a319]"><SiLinkedin size={isMobile ? 18 : 24} /></a>
                 <a href="https://web.facebook.com/ieeecskdu?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" className="w-5 h-5 flex items-center justify-center text-black hover:text-[#f9a319]"><SiFacebook size={isMobile ? 18 : 24} /></a>
                 <a href="https://www.instagram.com/ieeecskdu/" target="_blank" rel="noopener noreferrer" className="w-5 h-5 flex items-center justify-center text-black hover:text-[#f9a319]"><SiInstagram size={isMobile ? 18 : 24} /></a>
