@@ -66,11 +66,11 @@ function ProjectCard({ item, index }) {
       initial={{ opacity: 0, y: 60 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.05 }}
-      className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 w-full max-w-sm overflow-hidden group cursor-pointer"
+      className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 w-full max-w-[25rem] overflow-hidden group cursor-pointer"
       onClick={handleClick}
     >
-      <div className="flex flex-col h-full">
-        <div className="relative overflow-hidden rounded-t-xl h-100">
+      <div className="flex flex-col w-full h-full">
+        <div className="relative overflow-hidden rounded-t-lg aspect-square w-full">
           <img
             src={item.imageUrl}
             alt={item.title}
@@ -108,14 +108,16 @@ export default function MainProjectCompo({ searchTerm = '' }) {
 
   return (
     <div className="w-full flex flex-col items-center gap-8 px-4 sm:px-6 lg:px-8 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl justify-items-center">
         {filteredImages.length === 0 ? (
           <div className="col-span-3 text-center py-20">
             <p className="text-2xl font-semibold text-gray-900">No results found!</p>
             <p className="text-gray-600 mt-2">Sorry, we couldn't find anything matching your search.</p>
           </div>
         ) : (
-          filteredImages.slice(0, visibleCount).map((item, index) => <ProjectCard key={index} item={item} index={index} />)
+          filteredImages.slice(0, visibleCount).map((item, index) => (
+            <ProjectCard key={index} item={item} index={index} />
+          ))
         )}
       </div>
 

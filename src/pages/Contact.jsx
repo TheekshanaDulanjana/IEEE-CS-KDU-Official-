@@ -129,7 +129,7 @@ const Contact = () => {
                 value={formData.first_name}
                 onChange={handleChange}
                 placeholder="First Name"
-                className="w-full border px-4 py-2 h-10 focus:border-black"
+                className="w-full border rounded-sm px-4 py-2 h-10 focus:border-black"
               />
               {errors.first_name && <p className="text-red-500 text-sm mt-1">{errors.first_name}</p>}
             </div>
