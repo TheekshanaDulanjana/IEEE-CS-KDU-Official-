@@ -16,6 +16,7 @@ import Projects from "./pages/Projects";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import PresidentMessage from "./pages/PresidentMessage";
+import PixelWave from "./pages/Pixelwave";
 
 import PerProject from "./components/PerProject";
 import LoadingSpinnerCompo from "./components/LoadingSpinnerCompo";
@@ -93,6 +94,7 @@ function AppRoutes() {
         <Route path="/team" element={<Team />} />
         <Route path="/project/:projectID" element={<PerProject />} />
         <Route path="/chairPersonMessage" element={<PresidentMessage />} />
+        <Route path="/pixelwave" element={<PixelWave />} />
 
       </Routes>
       <Footer />
