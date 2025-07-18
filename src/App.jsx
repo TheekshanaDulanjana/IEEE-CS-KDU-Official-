@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { 
-  BrowserRouter, 
-  Routes, 
+import {
+  BrowserRouter,
+  Routes,
   Route,
-  useLocation 
+  useLocation,
 } from "react-router-dom";
 
 import Header01 from "./components/Header01";
@@ -17,14 +17,14 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import PresidentMessage from "./pages/PresidentMessage";
 import PixelWave from "./pages/Pixelwave";
+import NotFound from "./pages/NotFound"; // ✅ Import NotFound page
 
 import PerProject from "./components/PerProject";
 import LoadingSpinnerCompo from "./components/LoadingSpinnerCompo";
 import RecentProjectCompo from "./components/RecentProjectsCompo";
 import OtherClubCompo from "./components/OtherClubCompo";
 
-
-// ✅ This updates page title dynamically
+// ✅ Dynamically update page title
 function UpdateTitle() {
   const location = useLocation();
 
@@ -54,7 +54,7 @@ function UpdateTitle() {
         pageTitle = "Contact | IEEE Computer Society KDU";
         break;
       default:
-        break;
+        pageTitle = "Page not found";
     }
 
     document.title = pageTitle;
@@ -63,12 +63,10 @@ function UpdateTitle() {
   return null;
 }
 
-
 function AppRoutes() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
 
-  // 👇 Skip headers on this route
   const hideHeaderRoutes = ["/pixelwave"];
   const hideHeaders = hideHeaderRoutes.includes(location.pathname);
 
@@ -83,7 +81,6 @@ function AppRoutes() {
     <>
       {loading && <LoadingSpinnerCompo />}
 
-      {/* ⛔️ Hide headers on /pixelwave */}
       {!hideHeaders && (
         <>
           <Header01 />
@@ -98,8 +95,8 @@ function AppRoutes() {
             <>
               <section id="home"><Home /></section>
               <section id="about"><About /></section>
-              <OtherClubCompo/>
-              <RecentProjectCompo/>
+              <OtherClubCompo />
+              <RecentProjectCompo />
               <section id="contact"><Contact /></section>
             </>
           }
@@ -109,14 +106,15 @@ function AppRoutes() {
         <Route path="/project/:projectID" element={<PerProject />} />
         <Route path="/chairPersonMessage" element={<PresidentMessage />} />
         <Route path="/pixelwave" element={<PixelWave />} />
+
+        {/* ✅ Wildcard route for invalid URLs */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {/* ✅ Show footer always */}
       <Footer />
     </>
   );
 }
-
 
 export default function App() {
   const [initialLoading, setInitialLoading] = useState(true);

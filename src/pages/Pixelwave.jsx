@@ -64,7 +64,9 @@ export default function ApplicationForm() {
     setSubmitStatus('');
     setErrors({});
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxkSP3CiTYjdv_EHgaEBOkYU7LRkHm84UPWwyJ6eFRIB_pfO0u07UireFltnPJX6428Dw/exec';
+const scriptURL = import.meta.env.VITE_SCRIPT_URL;
+
+
 
     const payload = {
       fullName: formData.fullName,
