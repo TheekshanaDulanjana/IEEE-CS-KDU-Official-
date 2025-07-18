@@ -24,7 +24,7 @@ import RecentProjectCompo from "./components/RecentProjectsCompo";
 import OtherClubCompo from "./components/OtherClubCompo";
 
 
-
+// ✅ This updates page title dynamically
 function UpdateTitle() {
   const location = useLocation();
 
@@ -44,13 +44,15 @@ function UpdateTitle() {
       case "/chairPersonMessage":
         pageTitle = "Chair Person Message | IEEE CS KDU";
         break;
+      case "/pixelwave":
+        pageTitle = "PixelWave";
+        break;
       case "/#about":
         pageTitle = "About | IEEE Computer Society KDU";
         break;
       case "/#contact":
         pageTitle = "Contact | IEEE Computer Society KDU";
         break;
-
       default:
         break;
     }
@@ -61,9 +63,14 @@ function UpdateTitle() {
   return null;
 }
 
+
 function AppRoutes() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
+
+  // 👇 Skip headers on this route
+  const hideHeaderRoutes = ["/pixelwave"];
+  const hideHeaders = hideHeaderRoutes.includes(location.pathname);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -75,8 +82,15 @@ function AppRoutes() {
   return (
     <>
       {loading && <LoadingSpinnerCompo />}
-      <Header01 />
-      <Header02 />
+
+      {/* ⛔️ Hide headers on /pixelwave */}
+      {!hideHeaders && (
+        <>
+          <Header01 />
+          <Header02 />
+        </>
+      )}
+
       <Routes>
         <Route
           path="/"
@@ -95,12 +109,14 @@ function AppRoutes() {
         <Route path="/project/:projectID" element={<PerProject />} />
         <Route path="/chairPersonMessage" element={<PresidentMessage />} />
         <Route path="/pixelwave" element={<PixelWave />} />
-
       </Routes>
+
+      {/* ✅ Show footer always */}
       <Footer />
     </>
   );
 }
+
 
 export default function App() {
   const [initialLoading, setInitialLoading] = useState(true);

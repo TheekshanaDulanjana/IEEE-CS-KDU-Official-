@@ -33,8 +33,7 @@ const ProfileCard = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
         >
-          Get to know Our Dedicated Executive Committee and see the impactful teams from <br />
-          Previous years who helped us grow.
+          A note from our Chairperson sharing the vision, goals, and future plans <br />of our organization.
         </motion.p>
       </div>
     </div>
@@ -43,11 +42,11 @@ const ProfileCard = () => (
       <img
         src={Dinuka}
         alt="Profile"
-        className="w-full h-100 md:w-1/3 object-cover rounded-md shadow-md"
+        className="w-full h-120 md:w-1/3 object-cover rounded-md shadow-md"
       />
       <div className="flex-1 space-y-4">
         <div>
-          <h1 className="text-3xl font-semibold font-poppins text-gray-800">Mr. Dinuka Wickramasinghe</h1>
+          <h1 className="text-3xl font-semibold mt-15 font-poppins text-gray-800">Mr. Dinuka Wickramasinghe</h1>
           <p className="text-md text-gray-600 font-poppins">
             Chairperson,<br /> IEEE Computer Society KDU 2025-2026
           </p>
@@ -60,7 +59,7 @@ const ProfileCard = () => (
           <br /><br />
           Stay connected and stay inspired!
         </p>
-        <div className="flex items-center gap-1 text-lg">
+        <div className="flex items-center gap-1 text-lg mb-15">
           <a
             href="https://mail.google.com/mail/?view=cm&to=dinukaw2002@gmail.com"
             target="_blank"
@@ -73,7 +72,7 @@ const ProfileCard = () => (
             href="https://www.linkedin.com/in/dinuka-wickramasinghe-70b111248"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-6 h-6 flex items-center justify-center text-gray-600 hover:text-black"
+            className="w-6 h-6 flex items-center justify-center text-gray-600 hover:text-black "
           >
             <SiLinkedin />
           </a>

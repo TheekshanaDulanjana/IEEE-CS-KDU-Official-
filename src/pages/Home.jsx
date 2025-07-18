@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useNavigate } from 'react-router-dom';
+
 
 import 'swiper/swiper-bundle.css';
 import 'swiper/css';
@@ -17,9 +19,9 @@ import MainBG4L from '../assets/MainBGHome04.jpg';
 
 import MainBG1P from '../assets/MainBG1P.jpg';
 
-
 const Home = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -80,6 +82,23 @@ const Home = () => {
             ${isMobile ? 'text-lg mb-1' : isTablet ? 'text-xl mb-1.5' : 'text-2xl mb-2'}`}>
             General Sir John Kotelawala Defence University
           </p>
+
+          {/* 👇 Button Added Here */}
+<motion.button
+  onClick={() => navigate('/pixelwave')}
+  className="mt-4 px-6 py-2 bg-gradient-to-r from-[#7f00ff] to-[#b344ec] text-white font-semibold rounded-full cursor-pointer"
+  animate={{
+    y: [0, -6, 0], // bump upward and return
+  }}
+  transition={{
+    duration: 0.6,
+    repeat: Infinity,
+    ease: 'easeInOut',
+  }}
+>
+  Apply to PixelWave
+</motion.button>
+
         </motion.div>
       </div>
 
