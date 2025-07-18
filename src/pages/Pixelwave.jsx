@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Pixcelwave from '../assets/Pixcelwave.png';
 import Lady from '../assets/LadyI.png';
-import Yaka from '../assets/yaka.png';
+import Yaka from '../assets/DigitalYaka.png';
 import Quote from '../assets/quote.png';
 import { useNavigate } from 'react-router-dom';
 
