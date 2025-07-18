@@ -158,64 +158,65 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
       </section>
 
       {/* Registration Info */}
-      <div className="bg-white/10 font-poppins backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20 p-6 sm:p-8 max-w-7xl mx-auto text-center mb-8 sm:mb-10">
-        <h2
-          className="text-2xl sm:text-3xl font-bold mb-1"
-          style={{
-            background: "linear-gradient(90deg, #7f00ff, #b344ec)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-            color: "transparent"
-          }}
-        >
-          PARTICIPANT REGISTRATION
-        </h2>
+      <div className="bg-white/10 font-poppins backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20 p-2 sm:p-8 max-w-7xl mx-4 sm:mx-auto text-center mb-8 sm:mb-10">
+          <h2
+            className="text-2xl sm:text-3xl mt-4 font-bold mb-1"
+            style={{
+              background: "linear-gradient(90deg, #7f00ff, #b344ec)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
+          >
+            PARTICIPANT REGISTRATION
+          </h2>
 
-        <h3 className="text-lg sm:text-xl font-semibold mb-4 text-white">PicelWave 2025</h3>
-        <p className="text-white text-sm sm:text-base">
-          Welcome to the official registration Web Page for PixelWave 2025 :
-          A Digital Art Exhibition, <br className="hidden sm:block" /> Organized by the IEEE Computer Society Student Branch Chapter of General Sir John Kotelawala Defence University.
-        </p>
+          <h3 className="text-lg sm:text-xl font-semibold mb-4 text-white">PixelWave 2025</h3>
+          <p className="text-white text-sm sm:text-base">
+            Welcome to the official registration Web Page for PixelWave 2025 :
+            A Digital Art Exhibition, <br className="hidden sm:block" /> Organized by the IEEE Computer Society Student Branch Chapter of General Sir John Kotelawala Defence University.
+          </p>
 
-        <div className="mt-8 sm:mt-10 flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-20 text-white">
-          {/* Yaka Image */}
-          <div className="w-full md:w-1/3 flex justify-center">
-            <img src={Yaka} alt="Yaka Character" className="w-[120px] sm:w-[150px] md:w-[180px]" />
-          </div>
-
-          {/* Quote Content */}
-          <div className="w-full md:w-2/3 space-y-4 sm:space-y-6">
-            {/* Event Phases */}
-            <div className="flex items-start gap-3 sm:gap-4">
-              <img src={Quote} alt="Quote Icon" className="w-12 sm:w-16 mt-1" />
-              <div className="text-left">
-                <h4 className="font-bold text-xl sm:text-2xl">Event Phases:</h4>
-                <ul className="list-disc list-inside text-sm sm:text-medium">
-                  <li>E-Poster Round</li>
-                  <li>24-Hour Digital Art Challenge</li>
-                  <li>Final Exhibition & Awards Ceremony</li>
-                </ul>
-              </div>
+          <div className="mt-8 sm:mt-10 flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-20 text-white">
+            {/* Yaka Image */}
+            <div className="w-full md:w-1/3 flex justify-center">
+              <img src={Yaka} alt="Yaka Character" className="w-[120px] sm:w-[150px] md:w-[180px]" />
             </div>
 
-            {/* Eligibility */}
-            <div className="flex items-start gap-3 sm:gap-4">
-              <img src={Quote} alt="Quote Icon" className="w-12 sm:w-16 mt-1" />
-              <div className="text-left">
-                <h4 className="font-bold text-xl sm:text-2xl">Eligibility:</h4>
-                <ul className="list-disc list-inside text-sm sm:text-medium">
-                  <li>Open to all undergraduates across Sri Lanka.</li>
-                  <li>Please note: Participation is strictly individual.</li>
-                </ul>
+            {/* Quote Content */}
+            <div className="w-full md:w-2/3 space-y-4 sm:space-y-6">
+              {/* Event Phases */}
+              <div className="flex items-start gap-3 sm:gap-4">
+                <img src={Quote} alt="Quote Icon" className="w-12 sm:w-16 mt-1" />
+                <div className="text-left">
+                  <h4 className="font-bold text-xl sm:text-2xl">Event Phases:</h4>
+                  <ul className="list-disc list-inside text-sm sm:text-base">
+                    <li>E-Poster Round</li>
+                    <li>24-Hour Digital Art Challenge</li>
+                    <li>Final Exhibition & Awards Ceremony</li>
+                  </ul>
+                </div>
               </div>
+
+              {/* Eligibility */}
+              <div className="flex items-start gap-3 sm:gap-4">
+                <img src={Quote} alt="Quote Icon" className="w-12 sm:w-16 mt-1" />
+                <div className="text-left">
+                  <h4 className="font-bold text-xl sm:text-2xl">Eligibility:</h4>
+                  <ul className="list-disc list-inside text-sm sm:text-base">
+                    <li>Open to all undergraduates across Sri Lanka.</li>
+                    <li>Please note: Participation is strictly individual.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p className="text-sm sm:text-base font-poppins text-left">
+                Kindly fill out the form below to confirm your interest and register for the competition.
+              </p>
             </div>
-            <p className="text-sm sm:text-medium font-poppins text-left">
-              Kindly fill out the form below to confirm your interest and register for the competition.
-            </p>
           </div>
         </div>
-      </div>
 
       {/* Form Section */}
       <div className="flex flex-col lg:flex-row items-center justify-center px-4 sm:px-6 pb-8 sm:pb-16 max-w-7xl mx-auto gap-6 lg:gap-12 w-full">
