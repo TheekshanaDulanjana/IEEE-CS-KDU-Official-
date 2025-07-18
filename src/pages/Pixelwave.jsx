@@ -123,9 +123,9 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
             className="text-white uppercase text-sm sm:text-base font-medium hover:text-[#7f00ff] transition"
             onClick={() => navigate('/')}
           >
-            Home
+            IEEE Computer Society Student Chapter of KDU
           </button>
-          <button className="text-white uppercase text-sm sm:text-base font-medium hover:text-[#7f00ff] transition">Contact</button>
+          
         </header>
       </div>
 
