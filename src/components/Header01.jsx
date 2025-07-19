@@ -46,7 +46,7 @@ export default function Header() {
           <img
             src={IEEE_MAIN_LOGO_BW}
             alt="IEEE_MAIN_LOGO_BW"
-            className="h-10 object-contain"
+            className="h-6 -mt-1 object-contain"
           />
         </a>
       </header>

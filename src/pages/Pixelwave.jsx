@@ -181,7 +181,7 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
           <div className="mt-8 sm:mt-10 flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-20 text-white">
             {/* Yaka Image */}
             <div className="w-full md:w-1/3 flex justify-center">
-              <img src={Yaka} alt="Yaka Character" className="w-[120px] sm:w-[150px] md:w-[180px]" />
+              <img src={Yaka} alt="Yaka Character" className="w-[240px] sm:w-[150px] md:w-[300px]" />
             </div>
 
             {/* Quote Content */}
@@ -205,14 +205,14 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
                 <div className="text-left">
                   <h4 className="font-bold text-xl sm:text-2xl">Eligibility:</h4>
                   <ul className="list-disc list-inside text-sm sm:text-base">
-                    <li>Open to all undergraduates across Sri Lanka.</li>
-                    <li>Please note: Participation is strictly individual.</li>
+                    <li>Open to all <span className='font-semibold text-[#7f00ff]'> Undergraduates across Sri Lanka.</span></li>
+                    <li className='font-semibold text-[#7f00ff]'>Please note: Participation is strictly individual.</li>
                   </ul>
                 </div>
               </div>
 
               <p className="text-sm sm:text-base font-poppins text-left">
-                Kindly fill out the form below to confirm your interest and register for the competition.
+                Kindly fill out the form below to <span className='text-[#7f00ff] font-semibold'>confirm </span>  your interest and <span className='text-[#7f00ff] font-semibold'>register for the competition. </span>
               </p>
             </div>
           </div>
@@ -258,7 +258,7 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
                   name="university"
                   value={formData.university}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-lg bg-white/80 text-black"
+                  className="w-full px-4 py-2 hover:cursor-pointer rounded-lg bg-white/80 text-gray-600"
                   disabled={isSubmitting}
                 >
                   <option value="">Select your university</option>
@@ -328,7 +328,7 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#7f00ff] text-white font-semibold py-2 rounded-lg hover:bg-[#513767] transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#7f00ff] text-white font-semibold py-2 hover:cursor-pointer rounded-lg hover:bg-[#513767] transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Submitting...' : 'Submit Application'}
               </button>
