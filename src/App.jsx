@@ -17,7 +17,7 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import PresidentMessage from "./pages/PresidentMessage";
 import PixelWave from "./pages/Pixelwave";
-import NotFound from "./pages/NotFound"; // ✅ Import NotFound page
+import NotFound from "./pages/NotFound";
 
 import PerProject from "./components/PerProject";
 import LoadingSpinnerCompo from "./components/LoadingSpinnerCompo";
@@ -70,6 +70,21 @@ function AppRoutes() {
   const hideHeaderRoutes = ["/pixelwave"];
   const hideHeaders = hideHeaderRoutes.includes(location.pathname);
 
+  // ✅ Change favicon dynamically
+  useEffect(() => {
+    const defaultFavicon = "/KDU_CS.png";
+    const pixelwaveFavicon = "/pixelwavelogo.jpg";
+
+    const faviconTag = document.querySelector("link[rel~='icon']");
+    if (faviconTag) {
+      if (location.pathname === "/pixelwave") {
+        faviconTag.href = pixelwaveFavicon;
+      } else {
+        faviconTag.href = defaultFavicon;
+      }
+    }
+  }, [location]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setLoading(true);
@@ -106,8 +121,6 @@ function AppRoutes() {
         <Route path="/project/:projectID" element={<PerProject />} />
         <Route path="/chairPersonMessage" element={<PresidentMessage />} />
         <Route path="/pixelwave" element={<PixelWave />} />
-
-        {/* ✅ Wildcard route for invalid URLs */}
         <Route path="*" element={<NotFound />} />
       </Routes>
 

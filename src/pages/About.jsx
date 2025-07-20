@@ -32,11 +32,11 @@ const About = () => {
             <h1 className="text-2xl sm:text-3xl md:text-4xl text-black font-poppins font-semibold">
               Who <span className="text-[#f9a319]">We Are?</span>
             </h1>
-            <h3 className="text-lg sm:text-md text-gray-600 mb-2 font-poppins">
-              The IEEE Computer Society of KDU
+            <h3 className="text-lg sm:text-md text-gray-600 mb-2 font-poppins italic">
+              #IEEECSKDU
             </h3>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-800 font-bellefair leading-relaxed mb-4 mt-4 text-justify">
-              Established in 2023,<span className="font-semibold"> The IEEE Computer Society </span> Student Chapter at <br className="hidden sm:block" />
+              Established in 2023,<span className="font-semibold"> The IEEE Computer Society Student Branch Chapter of</span>  <br className="hidden sm:block" />
               <span className="font-semibold"> General Sir John Kotelawala Defence University (KDU) </span>
               serves as a vibrant platform for computer science enthusiasts and future technology leaders. 
               Dedicated to advancing knowledge, fostering collaboration, and promoting innovation, 

@@ -5,13 +5,21 @@ import idate from '../assets/Idate.jpg';
 import Artha from '../assets/Artha.jpg';
 import afterParty from '../assets/after_party.jpg';
 import MasterLinkedin from '../assets/MasterLinkedin.jpg';
+import pixelwave from '../assets/PixelWave.jpg';
 
 const projectData = [
+    {
+    title: 'PixelWave',
+    imageUrl: pixelwave,
+    description: 'Upcoming event!',
+    projectID: 'PixelWave',
+    images: [pixelwave]
+  },
   {
-    title: 'Master Linkedin',
+    title: 'MasterInLinkedIn',
     imageUrl: MasterLinkedin,
-    description: 'waiting for message!',
-    projectID: 'MasterLinkedin',
+    description: 'The MasterInLinkedIn session was a highly informative and engaging virtual event that drew over 100 undergraduate students from across the country. Mr. Dilshan Sanjeewa, Senior Technical Recruiter at PickMe Digital Mobility Solutions Lanka (PVT) Ltd, was the session\'s esteemed guest speaker.Mr. Sanjeewa provided valuable insights on how to manage a LinkedIn profile professionally and strategically. He shared useful tips and techniques to help students improve their online presence and attract potential employers, providing a comprehensive understanding of how to use LinkedIn for career advancement.',
+    projectID: 'MasterInLinkedIn',
     images: [MasterLinkedin]
   },
   {
@@ -105,7 +113,7 @@ export default function RecentProject() {
 
         <div className="relative -mt-5">
           <div className="overflow-hidden py-4">
-            <div className="flex animate-scroll-left hover:pause">
+            <div className="flex animate-scroll-right hover:pause">
               {duplicatedData.map((item, index) => (
                 <div key={`${item.projectID}-${index}`} className="px-2">
                   <ProjectCard item={item} />
@@ -138,18 +146,18 @@ export default function RecentProject() {
       </div>
 
       <style jsx>{`
-        @keyframes scroll-left {
+        @keyframes scroll-right {
           0% {
-            transform: translateX(0);
-          }
-          100% {
             transform: translateX(-50%);
           }
+          100% {
+            transform: translateX(0);
+          }
         }
-        .animate-scroll-left {
+        .animate-scroll-right {
           display: flex;
           width: max-content;
-          animation: scroll-left 60s linear infinite;
+          animation: scroll-right 60s linear infinite;
         }
         .hover\\:pause:hover {
           animation-play-state: paused;

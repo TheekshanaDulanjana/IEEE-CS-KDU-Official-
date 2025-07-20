@@ -172,7 +172,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-gray-400 text-center">
-        <div className="font-poppins font-thin text-black ">
+        <div className="font-poppins  text-black ">
           © {new Date().getFullYear()} IEEE Computer Society of KDU. All Rights Reserved.
         </div>
       </div>

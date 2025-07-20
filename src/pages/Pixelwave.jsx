@@ -123,7 +123,7 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
             className="text-white uppercase text-sm sm:text-base font-medium hover:text-[#7f00ff] transition"
             onClick={() => navigate('/')}
           >
-            IEEE Computer Society Student Chapter of KDU
+            IEEE Computer Society Student Branch Chapter of General Sir John Kotelawala Defence University
           </button>
           
         </header>
@@ -158,7 +158,7 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
       </section>
 
       {/* Registration Info */}
-      <div className="bg-white/10 font-poppins backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20 p-2 sm:p-8 max-w-7xl mx-4 sm:mx-auto text-center mb-8 sm:mb-10">
+      <div className="bg-white/10 font-poppins backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20 p-2 sm:p-8 max-w-7xl mx-4 md:mx-5 lg:mx-auto sm:mx-auto text-center mb-8 sm:mb-10">
           <h2
             className="text-2xl sm:text-3xl mt-4 font-bold mb-1"
             style={{

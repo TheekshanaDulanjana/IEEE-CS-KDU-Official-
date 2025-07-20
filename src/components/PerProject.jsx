@@ -3,6 +3,7 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import Masonry from 'react-masonry-css';
 import { FaChevronLeft, FaChevronRight, FaArrowLeft } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import ProjectBanner from '../assets/MainBGHome04.jpg';
 
 const PerProject = () => {
   const { projectID } = useParams();
@@ -36,7 +37,9 @@ const PerProject = () => {
         {images[0] && (
           <>
             <img
-              src={images[0]}
+              // src={images[0]}
+              src={ProjectBanner}
+              
               alt={title}
               className="w-full h-full object-cover"
             />

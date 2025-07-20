@@ -7,13 +7,21 @@ import idate from '../assets/Idate.jpg';
 import Artha from '../assets/Artha.jpg';
 import afterParty from '../assets/after_party.jpg';
 import MasterLinkedin from '../assets/MasterLinkedin.jpg';
+import pixelwave from '../assets/PixelWave.jpg';
 
 const images = [
+      {
+      title: 'PixelWave',
+      imageUrl: pixelwave,
+      description: 'Upcoming event!',
+      projectID: 'PixelWave',
+      images: [pixelwave]
+    },
   {
-    title: 'Master Linkedin',
+    title: 'MasterInLinkedIn',
     imageUrl: MasterLinkedin,
-    description: 'waiting for message!',
-    projectID: 'MasterLinkedin',
+    description: 'The MasterInLinkedIn session was a highly informative and engaging virtual event that drew over 100 undergraduate students from across the country. Mr. Dilshan Sanjeewa, Senior Technical Recruiter at PickMe Digital Mobility Solutions Lanka (PVT) Ltd, was the session\'s esteemed guest speaker.Mr. Sanjeewa provided valuable insights on how to manage a LinkedIn profile professionally and strategically. He shared useful tips and techniques to help students improve their online presence and attract potential employers, providing a comprehensive understanding of how to use LinkedIn for career advancement.',
+    projectID: 'MasterInLinkedIn',
     images: [MasterLinkedin],
   },
   {

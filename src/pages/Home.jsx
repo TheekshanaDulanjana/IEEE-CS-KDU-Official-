@@ -71,24 +71,24 @@ const Home = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className={`absolute inset-0 flex flex-col -mt-10 items-center justify-center text-center z-20 text-white 
+          className={`absolute inset-0 flex flex-col -mt-6 items-center justify-center text-center z-20 text-white 
             ${isMobile ? 'px-4' : isTablet ? 'px-10' : 'px-20'}`}
         >
           <h1 className={`font-poppins font-semibold uppercase mb-1 
             ${isMobile ? 'text-3xl' : isTablet ? 'text-5xl' : 'text-5xl'}`}>
-            IEEE Computer Society Student Chapter of
+            IEEE Computer Society Student Branch Chapter of 
           </h1>
           <p className={`font-poppins 
             ${isMobile ? 'text-lg mb-1' : isTablet ? 'text-xl mb-1.5' : 'text-2xl mb-2'}`}>
             General Sir John Kotelawala Defence University
           </p>
 
-          {/* 👇 Button Added Here */}
+          
 <motion.button
   onClick={() => navigate('/pixelwave')}
   className="mt-4 px-6 py-2 bg-gradient-to-r from-[#7f00ff] to-[#b344ec] text-white font-semibold rounded-full cursor-pointer"
   animate={{
-    y: [0, -6, 0], // bump upward and return
+    y: [0, -6, 0], 
   }}
   transition={{
     duration: 0.6,
