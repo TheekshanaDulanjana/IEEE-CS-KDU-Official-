@@ -5,7 +5,7 @@ import idate from '../assets/Idate.jpg';
 import Artha from '../assets/Artha.jpg';
 import afterParty from '../assets/after_party.jpg';
 import MasterLinkedin from '../assets/MasterLinkedin.jpg';
-import pixelwave from '../assets/PixelWave.jpg';
+import pixelwave from '../assets/pixelwaveflyer.jpg';
 
 const projectData = [
     {
