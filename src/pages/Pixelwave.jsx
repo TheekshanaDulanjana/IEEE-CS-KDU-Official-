@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Pixcelwave from '../assets/Pixcelwave.png';
 import Lady from '../assets/LadyI.png';
 import Yaka from '../assets/DigitalYaka.png';
@@ -18,10 +18,12 @@ export default function ApplicationForm() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [showDropdown, setShowDropdown] = useState(false);
   const navigate = useNavigate();
 
   const universities = [
-    "University of Moratuwa", "University of Sri Jayawardenapura", "University of Jaffna",
+    "General Sir John Kotelawala Defence University", "University of Moratuwa", "University of Sri Jayawardenapura", "University of Jaffna",
     "University of Sabaragamuwa", "University of Colombo", "University of Kelaniya",
     "University of Peradeniya", "University of Ruhuna", "Eastern University, Sri Lanka",
     "South Eastern University of Sri Lanka", "Rajarata University of Sri Lanka",
@@ -30,6 +32,21 @@ export default function ApplicationForm() {
     "National Institute of Business Management (NIBM)", "Informatics Institute of Technology (IIT)",
     "SLTC Research University", "Other"
   ];
+
+  const filteredUniversities = universities.filter(uni =>
+    uni.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (!e.target.closest('.university-dropdown')) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const validate = () => {
     const newErrors = {};
@@ -52,6 +69,17 @@ export default function ApplicationForm() {
     setFormData(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
   };
 
+  const handleUniversitySearch = (e) => {
+    setSearchTerm(e.target.value);
+    setShowDropdown(true);
+  };
+
+  const selectUniversity = (uni) => {
+    setFormData(prev => ({ ...prev, university: uni }));
+    setSearchTerm(uni);
+    setShowDropdown(false);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
@@ -64,9 +92,7 @@ export default function ApplicationForm() {
     setSubmitStatus('');
     setErrors({});
 
-const scriptURL = import.meta.env.VITE_SCRIPT_URL;
-
-
+    const scriptURL = import.meta.env.VITE_SCRIPT_URL;
 
     const payload = {
       fullName: formData.fullName,
@@ -93,6 +119,7 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
         contact: '',
         agree: false,
       });
+      setSearchTerm('');
 
       setTimeout(() => setSubmitStatus(''), 3000);
     } catch (error) {
@@ -125,7 +152,6 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
           >
             IEEE Computer Society Student Branch Chapter of General Sir John Kotelawala Defence University
           </button>
-          
         </header>
       </div>
 
@@ -146,9 +172,8 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
           />
         </div>
 
-
         {/* Right: Lady Image - Hidden on small screens */}
-        <div className=" md:block md:w-1/2 mt-10  md:mt-0 flex justify-end">
+        <div className="md:block md:w-1/2 mt-10 md:mt-0 flex justify-end">
           <img 
             src={Lady} 
             alt="Lady" 
@@ -240,7 +265,7 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
 
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
               <div>
-                <label className="block text-sm text-white">Full Name</label>
+                <label className="block text-sm text-white mb-2">Full Name</label>
                 <input
                   type="text"
                   name="fullName"
@@ -252,26 +277,45 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
                 {errors.fullName && <p className="text-red-400 text-xs">{errors.fullName}</p>}
               </div>
 
-              <div>
-                <label className="block text-sm text-white">University</label>
-                <select
-                  name="university"
-                  value={formData.university}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 hover:cursor-pointer rounded-lg bg-white/80 text-gray-600"
+              <div className="relative university-dropdown">
+                <label className="block text-sm text-white mb-2">University</label>
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={handleUniversitySearch}
+                  onFocus={() => setShowDropdown(true)}
+                  placeholder="Search or select your university"
+                  className="w-full px-4 py-2 rounded-lg bg-white/80 text-gray-600"
                   disabled={isSubmitting}
-                >
-                  <option value="">Select your university</option>
-                  {universities.map((uni, index) => (
-                    <option key={index} value={uni}>{uni}</option>
-                  ))}
-                </select>
+                />
+                {showDropdown && (
+                  <div className="absolute z-10 mt-1 w-full bg-white rounded-lg shadow-lg border border-gray-200">
+                    <select
+                      name="university"
+                      value={formData.university}
+                      onChange={(e) => selectUniversity(e.target.value)}
+                      size={Math.min(8, filteredUniversities.length)}
+                      className="w-full text-gray-600 rounded-lg"
+                      disabled={isSubmitting}
+                    >
+                      {filteredUniversities.map((uni, index) => (
+                        <option 
+                          key={index} 
+                          value={uni}
+                          className="px-4 py-2 hover:bg-[#7f00ff] hover:text-white cursor-pointer"
+                        >
+                          {uni}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
                 {errors.university && <p className="text-red-400 text-xs">{errors.university}</p>}
               </div>
 
               {formData.university === 'Other' && (
                 <div>
-                  <label className="block text-sm text-white">Enter your University</label>
+                  <label className="block text-sm text-white mb-2">Enter your University</label>
                   <input
                     type="text"
                     name="otherUniversity"
@@ -285,7 +329,7 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
               )}
 
               <div>
-                <label className="block text-sm text-white">Email</label>
+                <label className="block text-sm text-white mb-2">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -298,7 +342,7 @@ const scriptURL = import.meta.env.VITE_SCRIPT_URL;
               </div>
 
               <div>
-                <label className="block text-sm text-white">Contact Number</label>
+                <label className="block text-sm text-white mb-2">Contact Number (WhatsApp)</label>
                 <input
                   type="text"
                   name="contact"

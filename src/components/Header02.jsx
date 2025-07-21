@@ -66,11 +66,11 @@ export default function Header() {
   };
 
   const navItems = [
-    { path: '/', label: 'HOME' },
-    { path: '#about', label: 'ABOUT US', sectionId: 'about' },
-    { path: '/projects', label: 'PROJECTS' },
-    { path: '/team', label: 'TEAM' },
-    { path: '#contact', label: 'CONTACT US', sectionId: 'contact' },
+    { path: '/', label: 'Home' },
+    { path: '#about', label: 'About Us', sectionId: 'about' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/team', label: 'Team' },
+    { path: '#contact', label: 'Contact Us', sectionId: 'contact' },
   ];
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -134,7 +134,7 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:block">
-            <ul className="flex gap-4 font-poppins font-semibold text-gray-600">
+            <ul className="flex gap-4 font-poppins font-light text-gray-600">
               {navItems.map((item) => (
                 <li key={item.path}>{renderNavItem(item)}</li>
               ))}
