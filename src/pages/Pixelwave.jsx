@@ -145,7 +145,7 @@ export default function ApplicationForm() {
     >
       {/* Header */}
       <div className="absolute w-full px-4 sm:px-6 lg:px-8 mt-4 sm:mt-10">
-        <header className="w-full h-15 bg-white/10 backdrop-blur-sm p-4 sm:p-5 rounded-2xl shadow-2xl border border-white/20 flex justify-center items-center gap-5 sm:gap-10">
+        <header className="w-full h-18 bg-white/10 backdrop-blur-sm p-4 sm:p-5 rounded-2xl shadow-2xl border border-white/20 flex justify-center items-center gap-5 sm:gap-10">
           <button
             className="text-white uppercase text-sm sm:text-base font-medium hover:text-[#7f00ff] transition"
             onClick={() => navigate('/')}
