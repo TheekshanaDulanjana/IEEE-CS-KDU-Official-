@@ -23,14 +23,27 @@ export default function ApplicationForm() {
   const navigate = useNavigate();
 
   const universities = [
-    "General Sir John Kotelawala Defence University", "University of Moratuwa", "University of Sri Jayawardenapura", "University of Jaffna",
-    "University of Sabaragamuwa", "University of Colombo", "University of Kelaniya",
-    "University of Peradeniya", "University of Ruhuna", "Eastern University, Sri Lanka",
-    "South Eastern University of Sri Lanka", "Rajarata University of Sri Lanka",
-    "Uva Wellassa University", "Wayamba University of Sri Lanka", "Open University of Sri Lanka",
-    "Sri Lanka Institute of Information Technology (SLIIT)", "NSBM Green University",
-    "National Institute of Business Management (NIBM)", "Informatics Institute of Technology (IIT)",
-    "SLTC Research University", "Other"
+    "General Sir John Kotelawala Defence University", 
+    "University of Moratuwa", 
+    "University of Sri Jayawardenapura", 
+    "University of Jaffna",
+    "University of Sabaragamuwa", 
+    "University of Colombo", 
+    "University of Kelaniya",
+    "University of Peradeniya", 
+    "University of Ruhuna", 
+    "Eastern University, Sri Lanka",
+    "South Eastern University of Sri Lanka", 
+    "Rajarata University of Sri Lanka",
+    "Uva Wellassa University", 
+    "Wayamba University of Sri Lanka", 
+    "Open University of Sri Lanka",
+    "Sri Lanka Institute of Information Technology (SLIIT)", 
+    "NSBM Green University",
+    "National Institute of Business Management (NIBM)", 
+    "Informatics Institute of Technology (IIT)",
+    "SLTC Research University", 
+    "Other"
   ];
 
   const filteredUniversities = universities.filter(uni =>
@@ -40,7 +53,7 @@ export default function ApplicationForm() {
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (!e.target.closest('.university-dropdown')) {
+      if (!e.target.closest('.university-input')) {
         setShowDropdown(false);
       }
     };
@@ -277,7 +290,7 @@ export default function ApplicationForm() {
                 {errors.fullName && <p className="text-red-400 text-xs">{errors.fullName}</p>}
               </div>
 
-              <div className="relative university-dropdown">
+              <div className="relative university-input">
                 <label className="block text-sm text-white mb-2">University</label>
                 <input
                   type="text"
@@ -288,26 +301,34 @@ export default function ApplicationForm() {
                   className="w-full px-4 py-2 rounded-lg bg-white/80 text-gray-600"
                   disabled={isSubmitting}
                 />
-                {showDropdown && (
-                  <div className="absolute z-10 mt-1 w-full bg-white rounded-lg shadow-lg border border-gray-200">
-                    <select
-                      name="university"
-                      value={formData.university}
-                      onChange={(e) => selectUniversity(e.target.value)}
-                      size={Math.min(8, filteredUniversities.length)}
-                      className="w-full text-gray-600 rounded-lg"
-                      disabled={isSubmitting}
-                    >
-                      {filteredUniversities.map((uni, index) => (
-                        <option 
-                          key={index} 
-                          value={uni}
-                          className="px-4 py-2 hover:bg-[#7f00ff] hover:text-white cursor-pointer"
-                        >
-                          {uni}
-                        </option>
-                      ))}
-                    </select>
+                <select
+                  name="university"
+                  value={formData.university}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setSearchTerm(e.target.value);
+                  }}
+                  className="hidden"
+                >
+                  <option value="">Select your university</option>
+                  {universities.map((uni, index) => (
+                    <option key={index} value={uni}>{uni}</option>
+                  ))}
+                </select>
+                
+                {showDropdown && filteredUniversities.length > 0 && (
+                  <div className="absolute z-10 mt-1 w-full bg-white rounded-lg shadow-lg border border-gray-200 max-h-60 overflow-y-auto">
+                    {filteredUniversities.map((uni, index) => (
+                      <div
+                        key={index}
+                        onClick={() => selectUniversity(uni)}
+                        className={`px-4 py-2 hover:bg-[#7f00ff] hover:text-white cursor-pointer ${
+                          formData.university === uni ? 'bg-[#7f00ff] text-white' : 'text-gray-600'
+                        }`}
+                      >
+                        {uni}
+                      </div>
+                    ))}
                   </div>
                 )}
                 {errors.university && <p className="text-red-400 text-xs">{errors.university}</p>}
