@@ -67,7 +67,7 @@ function ProjectCard({ item }) {
     <div
       ref={ref}
       onClick={handleClick}
-      className={`bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 w-90 flex-shrink-0 mx-2 cursor-pointer
+      className={`bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 w-100 flex-shrink-0 mx-2 cursor-pointer
         ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
         transition-opacity duration-500 ease-in-out`}
     >
