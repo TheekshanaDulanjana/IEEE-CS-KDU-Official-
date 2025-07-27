@@ -21,10 +21,10 @@ export default function ApplicationForm() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
+    Days: 0,
+    Hours: 0,
+    Minutes: 0,
+    Seconds: 0
   });
   const navigate = useNavigate();
 
@@ -37,10 +37,10 @@ export default function ApplicationForm() {
       
       if (difference > 0) {
         setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+          Days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          Hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          Minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          Seconds: Math.floor((difference % (1000 * 60)) / 1000)
         });
       }
     };
@@ -223,7 +223,7 @@ export default function ApplicationForm() {
                 <div key={unit} className="text-center">
                   <div className="bg-[#7f00ff] rounded-lg p-2 w-16 sm:w-20">
                     <div className="text-xl sm:text-2xl font-bold">{value}</div>
-                    <div className="text-xs uppercase">{unit}</div>
+                    <div className="text-xs ">{unit}</div>
                   </div>
                 </div>
               ))}
