@@ -31,7 +31,7 @@ export default function ApplicationForm() {
   // Countdown timer effect
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const deadline = new Date('July 29, 2025 00:00:00').getTime();
+      const deadline = new Date('July 30, 2025 00:00:00').getTime();
       const now = new Date().getTime();
       const difference = deadline - now;
       
@@ -229,7 +229,7 @@ export default function ApplicationForm() {
               ))}
             </div>
             <p className="text-center mt-2 text-xs sm:text-sm font-poppins italic text-red-700">
-              *Until July 29, 2025 at 00:00 AM
+              *Until July 29, 2025
             </p>
           </div>
         </div>
