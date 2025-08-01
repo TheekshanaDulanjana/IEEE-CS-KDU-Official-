@@ -84,7 +84,7 @@ const Home = () => {
           </p>
 
           
-{/* <motion.button
+<motion.button
   onClick={() => navigate('/pixelwave')}
   className="mt-4 px-6 py-2 bg-gradient-to-r from-[#7f00ff] to-[#b344ec] text-white font-semibold rounded-full cursor-pointer"
   animate={{
@@ -96,8 +96,8 @@ const Home = () => {
     ease: 'easeInOut',
   }}
 >
-  Apply to PixelWave
-</motion.button> */}
+  Submit Task 01 - PixelWave 2025 
+</motion.button>
 
         </motion.div>
       </div>
