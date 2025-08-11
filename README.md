@@ -1,4 +1,4 @@
-# 🌐 IEEE Computer Society – KDU Student Branch Website
+# 🌐 IEEE Computer Society Student Branch Chapter of KDU Website
 
 ## 📌 Overview
 This is the official website of the **IEEE Computer Society Student Branch Chapter** of **General Sir John Kotelawala Defence University (KDU)**, designed and developed for a modern, fast, and fully responsive experience.  
