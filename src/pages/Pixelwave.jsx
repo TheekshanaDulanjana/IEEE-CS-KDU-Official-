@@ -34,7 +34,7 @@ const [formData, setFormData] = useState({
   // Countdown timer effect
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const deadline = new Date('August 13, 2025 00:23:59').getTime();
+      const deadline = new Date('August 17, 2025 23:59:00').getTime();
       const now = new Date().getTime();
       const difference = deadline - now;
       
@@ -228,7 +228,8 @@ const [formData, setFormData] = useState({
           {/* Countdown Timer */}
           <div className="pt-2">
             <h3 className="text-lg sm:text-xl font-poppins font-semibold uppercase mb-3 text-center">
-              Task #01 Submission Deadline
+              Deadline Extended <br />
+              Task #01 Submission 
             </h3>
             <div className="flex justify-center gap-2 sm:gap-3">
               {Object.entries(timeLeft).map(([unit, value]) => (
@@ -241,7 +242,7 @@ const [formData, setFormData] = useState({
               ))}
             </div>
             <p className="text-center mt-2 text-xs sm:text-sm font-poppins italic text-red-700">
-              *Until 13th August 2025, 11:59 PM
+              *New Deadline 17th August 2025, 11:59 PM
             </p>
           </div>
         </div>

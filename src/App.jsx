@@ -24,7 +24,7 @@ import LoadingSpinnerCompo from "./components/LoadingSpinnerCompo";
 import RecentProjectCompo from "./components/RecentProjectsCompo";
 import OtherClubCompo from "./components/OtherClubCompo";
 
-// ✅ Dynamically update page title
+
 function UpdateTitle() {
   const location = useLocation();
 
